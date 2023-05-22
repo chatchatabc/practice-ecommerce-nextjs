@@ -26,7 +26,7 @@ export default function RootLayout({
                 <p>Follow us on:</p>
                 <nav>
                   <a
-                    className="font-bold"
+                    className="font-bold transition hover:text-orange-200"
                     target="_blank"
                     href="https://www.facebook.com/"
                   >
@@ -37,24 +37,30 @@ export default function RootLayout({
 
               {/* Right */}
               <nav className="divide-x-2 [&>*]:px-2">
-                <a href="/sign-up">Sign Up</a>
-                <a href="/login">Login</a>
+                <a className="transition hover:text-orange-200" href="/sign-up">
+                  Sign Up
+                </a>
+                <a className="transition hover:text-orange-200" href="/login">
+                  Login
+                </a>
               </nav>
             </section>
 
             {/* Bottom */}
             <section className="flex items-center py-2">
               {/* Logo */}
-              <h1 className="text-4xl font-bold">E-commerce</h1>
+              <a href="/" className="transition hover:text-orange-200">
+                <h1 className="text-4xl font-bold">E-commerce</h1>
+              </a>
 
               {/* Search bar */}
               <div className="flex-1 px-8">
                 {/* Input */}
                 <section className="text-black">
-                  <div className="flex">
+                  <div className="flex rounded-sm overflow-hidden">
                     <input className="p-2 w-full" />
                     <div className="bg-white flex">
-                      <button className="px-2 text-orange-600 font-bold">
+                      <button className="px-2 text-orange-600 font-bold transition hover:text-orange-700">
                         Search
                       </button>
                     </div>
@@ -63,23 +69,37 @@ export default function RootLayout({
 
                 {/* Recommendations */}
                 <section className="text-xs py-1">
-                  <ul className="flex text-gray-200 space-x-2">
-                    <li>
-                      <a href="/products">Products</a>
-                    </li>
-                    <li>
-                      <a href="/products">Products</a>
-                    </li>
-                    <li>
-                      <a href="/products">Products</a>
-                    </li>
+                  <ul className="flex text-orange-100 space-x-2">
+                    {[...Array(10)].map((_, index) => {
+                      return (
+                        <li key={`search-suggestion-${index}`}>
+                          <a
+                            className="transition hover:text-orange-300"
+                            href="/products"
+                          >
+                            Products
+                          </a>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </section>
               </div>
 
               {/* Cart */}
               <div className="w-1/12">
-                <a href="/cart">Cart</a>
+                <a href="/cart">
+                  <svg
+                    className="text-white w-8 h-8 transition hover:text-orange-200"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M7 22q-.825 0-1.413-.588T5 20q0-.825.588-1.413T7 18q.825 0 1.413.588T9 20q0 .825-.588 1.413T7 22Zm10 0q-.825 0-1.413-.588T15 20q0-.825.588-1.413T17 18q.825 0 1.413.588T19 20q0 .825-.588 1.413T17 22ZM5.2 4h14.75q.575 0 .875.513t.025 1.037l-3.55 6.4q-.275.5-.738.775T15.55 13H8.1L7 15h12v2H7q-1.125 0-1.7-.988t-.05-1.962L6.6 11.6L3 4H1V2h3.25l.95 2Z"
+                    />
+                  </svg>
+                </a>
               </div>
             </section>
           </section>
