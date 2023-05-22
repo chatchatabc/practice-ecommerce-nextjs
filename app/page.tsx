@@ -53,7 +53,7 @@ function HomePage() {
 
           {/* Bottom */}
           <section className="mt-4">
-            <ul className="flex justify-between">
+            <ul className="flex justify-evenly">
               {[...Array(8)].map((_, index) => {
                 return (
                   <li key={`hero-sub-items-${index}`} className="p-1">
@@ -77,6 +77,88 @@ function HomePage() {
                 );
               })}
             </ul>
+          </section>
+        </section>
+      </section>
+
+      <section className="container mx-auto">
+        <section className="p-8">
+          <header>
+            <h2 className="text-2xl font-bold">Flash Sale</h2>
+          </header>
+          <section className="flex overflow-x-hidden overflow-y-clip bg-white rounded-sm space-x-2">
+            {[...Array(12)].map((_, index) => {
+              return (
+                <a href="/">
+                  <figure className="w-48 hover:shadow-xl">
+                    <div>
+                      <img
+                        className="w-full h-full object-cover"
+                        src="https://picsum.photos/400/400"
+                        alt="Product"
+                      />
+                    </div>
+                    <figcaption className="p-1">
+                      <p className="line-clamp-2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quos libero quod voluptatem! Minima obcaecati iste
+                        incidunt nesciunt ducimus nihil expedita, fuga,
+                        distinctio veritatis odit repellendus possimus et
+                        assumenda, laudantium quisquam.
+                      </p>
+                      {/* Price */}
+                      <p className="font-bold text-orange-600 text-lg">
+                        {new Intl.NumberFormat("en-PH", {
+                          style: "currency",
+                          currency: "PHP",
+                        }).format(2000)}
+                      </p>
+                    </figcaption>
+                  </figure>
+                </a>
+              );
+            })}
+          </section>
+        </section>
+      </section>
+
+      <section className="container mx-auto">
+        <section className="p-8">
+          <header>
+            <h2 className="text-2xl font-bold">Electronics</h2>
+          </header>
+          <section className="flex overflow-x-hidden overflow-y-clip bg-white rounded-sm space-x-2">
+            {[...Array(12)].map((_, index) => {
+              return (
+                <a href="/">
+                  <figure className="w-48 hover:shadow-xl">
+                    <div>
+                      <img
+                        className="w-full h-full object-cover"
+                        src="https://picsum.photos/400/400"
+                        alt="Product"
+                      />
+                    </div>
+                    <figcaption className="p-1">
+                      <p className="line-clamp-2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quos libero quod voluptatem! Minima obcaecati iste
+                        incidunt nesciunt ducimus nihil expedita, fuga,
+                        distinctio veritatis odit repellendus possimus et
+                        assumenda, laudantium quisquam.
+                      </p>
+                      {/* Price */}
+                      <p className="font-bold text-orange-600 text-lg">
+                        {new Intl.NumberFormat("en-PH", {
+                          style: "currency",
+                          currency: "PHP",
+                        }).format(2000)}
+                      </p>
+                    </figcaption>
+                  </figure>
+                </a>
+              );
+            })}
           </section>
         </section>
       </section>
