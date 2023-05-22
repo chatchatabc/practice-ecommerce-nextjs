@@ -1,3 +1,4 @@
+import ImageComp from "@/src/components/ImageComp";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -107,7 +108,56 @@ export default function RootLayout({
           </section>
         </header>
         <main className="flex-1">{children}</main>
-        <footer></footer>
+        <footer className="bg-white">
+          {/* Container */}
+          <section className="container mx-auto p-8 flex">
+            <section className="w-1/2">
+              <h3 className="text-xl">Payment Methods</h3>
+              <ul className="flex flex-wrap">
+                {[...Array(6)].map((_, index) => {
+                  return (
+                    <li className="w-32 p-1" key={`payment-method-${index}`}>
+                      <ImageComp
+                        containerClassName="pb-[50%]"
+                        src="https://picsum.photos/401/400"
+                      />
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
+            <section className="w-1/4">
+              <h3 className="text-xl">Delivery Services</h3>
+              <ul className="flex flex-wrap">
+                {[...Array(4)].map((_, index) => {
+                  return (
+                    <li className="w-32 p-1" key={`payment-method-${index}`}>
+                      <ImageComp
+                        containerClassName="pb-[50%]"
+                        src="https://picsum.photos/401/400"
+                      />
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
+            <section className="w-1/4">
+              <h3 className="text-xl">Verified By</h3>
+              <ul className="flex flex-wrap">
+                {[...Array(2)].map((_, index) => {
+                  return (
+                    <li className="w-32 p-1" key={`payment-method-${index}`}>
+                      <ImageComp
+                        containerClassName="pb-[50%]"
+                        src="https://picsum.photos/401/400"
+                      />
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
+          </section>
+        </footer>
       </body>
     </html>
   );
