@@ -15,7 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex flex-col min-h-screen`}>
+      <body
+        className={`${inter.className} flex flex-col min-h-screen bg-gray-100`}
+      >
         <header className="bg-gradient-to-b from-orange-600 to-orange-500 text-white">
           {/* Container */}
           <section className="container mx-auto">
